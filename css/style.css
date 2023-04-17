@@ -368,9 +368,10 @@ p {
 }
 
 .remera-foto {
-    width: 350px;
-    height: 350px;
-    padding:0 1rem 1rem 2rem;
+    width: 100%;
+    height: auto;
+    padding:1rem 1rem;
+    border-radius: 2rem;
 }
 
 .formulario{
@@ -414,6 +415,7 @@ input .cantidad{
     .remera-foto{
         max-width: 275px;
         max-height: 250px;
+        border-radius: 0;
     }
     .remera-contenido{
         font-weight: lighter;
