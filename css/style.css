@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');*/
 
 * {
     margin: 0;
@@ -11,6 +11,7 @@
     --secundario: rgb(250, 249, 249);
     --letras: #56FF11;
     --grises: grey;
+    --transp: rgba(0, 0, 0, 0.8);
 }
 
 html {
@@ -26,12 +27,12 @@ html {
 
 /**Globales**/
 body {
-    font-family: 'Anton', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20210605/pngtree-ethical-hacking-matrix-technological-background-vector-image_725998.jpg);
     font-size: 1.6rem;
     line-height: 1.5;
-    letter-spacing: 0.3rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    letter-spacing: 0.15rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 p {
@@ -93,7 +94,7 @@ h3 {
 }
 
 .navbar {
-    background-color: var(--primario);
+    background-color: rgba(0, 0, 0, 0.9);
     position: relative;
     width: auto;
     display: flex;
@@ -107,13 +108,14 @@ h3 {
 
 .footer {
     text-align: center;
-    background-color: var(--primario);
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .footer p {
     color: var(--secundario);
     font-size: 1.3rem;
     text-transform: uppercase;
+    margin-top: 100px;
 }
 
 
@@ -198,7 +200,8 @@ h3 {
 
 .producto-nombre,
 .producto-precio {
-    line-height: 1;
+    line-height: 2;
+    background-color: var(--transp);
 }
 
 .grafico {
@@ -229,5 +232,205 @@ h3 {
 @media (max-width:768px) {
     .grafico {
         display: none;
+    }
+}
+
+/*Seccion nosotros*/
+.nosotros {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    margin: 0 60px 60px;
+    background-color: var(--transp);
+}
+
+.nosotros-contenido {
+    padding: 2rem 2rem;
+}
+
+.nosotros-contenido p {
+    font-size: 1rem;
+    font-weight: lighter;
+    text-align: start;
+}
+
+.nosotros-imagen {
+    margin: auto;
+    border-radius: 2rem;
+}
+
+@media (max-width:768px) {
+    .nosotros {
+        grid-template-columns: repeat(1, 1fr);
+        margin: 10px;
+    }
+
+    .nosotros-imagen {
+        grid-row: 1 / 2;
+        border-radius: 50%;
+    }
+
+    .nosotros-contenido {
+        padding: 0;
+    }
+
+    .parrafo2 {
+        display: none;
+    }
+}
+
+/*bloque nosotros pie*/
+.comprar-titulo {
+    background-color: var(--transp);
+}
+
+.comprar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: var(--transp);
+    border: var(--primario) solid 0.5px;
+}
+
+.bloque {
+    border: var(--primario) solid 0.5px;
+}
+
+.bloque-titulo {
+    font-size: 1.5rem;
+}
+
+.bloque-titulo:hover {
+    color: var(--letras);
+}
+
+.bloque p {
+    font-size: small;
+    text-align: center
+}
+
+@media (max-width:768px) {
+    .comprar {
+        grid-template-columns: repeat(2, 1fr);
+        border: 0px;
+    }
+
+    .bloque {
+        border: 0px;
+    }
+
+    .comprar-titulo {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width:480px) {
+    .comprar {
+        grid-template-columns: repeat(1, 1fr);
+        margin: 15px 15px;
+        border: 0px;
+    }
+
+    .bloque {
+        border: 0px;
+    }
+
+    .comprar-titulo {
+        font-size: 1.6rem;
+    }
+}
+
+/*codigo del producto*/
+.container2 {
+    margin: 2rem 15rem;
+    background-color: var(--transp);
+    align-items: center;
+}
+
+.container2,
+.titulo:hover {
+    color: var(--letras)
+}
+
+.remera {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+}
+
+.remera-contenido{
+    text-align: start;
+    margin: .5rem 10rem .5rem 2rem;
+}
+.remera-contenido,
+p {
+    font-size: .8rem;
+
+}
+
+.remera-foto {
+    width: 350px;
+    height: 350px;
+    padding:0 1rem 1rem 2rem;
+}
+
+.formulario{
+    display: grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:2rem;
+}
+
+.form-campo{
+    border: 0.3rem solid var(--secundario);
+    background-color: var(--grises);
+    color:var(--primario)
+}
+input .cantidad{
+    color:var(--primario);
+}
+.form-submit{
+    background-color: var(--grises);
+    grid-column: 1 / 3;
+    border:none;
+    margin-top: 0.5rem;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    padding: 0.6rem;
+}
+.form-submit:hover{
+    background-color:var(--grises);
+    grid-column: 1 / 3;
+}
+
+
+@media(max-width:768px) {
+    .container2{
+        margin:0.5rem 0.5rem;
+        overflow-x: hidden;
+    }
+    .remera {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .remera-foto{
+        max-width: 275px;
+        max-height: 250px;
+    }
+    .remera-contenido{
+        font-weight: lighter;
+        font-size: .5rem;
+        margin: 0;
+    }
+    .formulario{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap:1rem
+    }
+    .form-campo{
+        font: size 1rem;
+        padding:0;
+    }
+    .form-submit{
+        font-size: 1rem;
+        padding: 0;
     }
 }
